@@ -11,7 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import * as Animatable from "react-native-animatable";
 
-export default function Login() {
+export default function Register() {
   const navigation = useNavigation();
 
   return (
@@ -21,28 +21,30 @@ export default function Login() {
         delay={500}
         style={styles.containerHeader}
       >
-        <Text style={styles.message}>Login</Text>
+        <Text style={styles.message}>Registre-se</Text>
       </Animatable.View>
 
       <Animatable.View animation="fadeInUp" style={styles.containerForm}>
+        <Text style={styles.title}>Nome Completo</Text>
+        <TextInput
+          placeholder="Primeiro nome, Último nome"
+          style={styles.input}
+        />
+
+        <Text style={styles.title}>Nome de Usuário</Text>
+        <TextInput placeholder="Usuário" style={styles.input} />
+
         <Text style={styles.title}>Email</Text>
-        <TextInput placeholder="Seu email" style={styles.input} />
+        <TextInput placeholder="example@email.com" style={styles.input} />
 
         <Text style={styles.title}>Password</Text>
         <TextInput placeholder="Sua senha" style={styles.input} />
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("Login")}
         >
-          <Text style={styles.buttonText}>Log In</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.buttonRegister}
-          onPress={() => navigation.navigate("Register")}
-        >
-          <Text style={styles.registerText}>Ainda não possui uma conta?</Text>
+          <Text style={styles.buttonText}>Criar Conta</Text>
         </TouchableOpacity>
       </Animatable.View>
     </View>

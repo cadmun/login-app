@@ -1,43 +1,41 @@
-import React from 'react'
-import { 
-  View, 
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity 
-} from 'react-native'
+import React from "react";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-import * as Animatable from 'react-native-animatable'
+import * as Animatable from "react-native-animatable";
 
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from "@react-navigation/native";
 
 export default function Welcome() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-
       <View style={styles.containerLogo}>
         <Animatable.Image
-        animation="flipInY"
-          source={require('../../assets/astro.png')}
-          style={{ width: '100%'}}
+          animation="flipInY"
+          source={require("../../assets/astro.png")}
+          style={{ width: "100%" }}
           resizeMode="contain"
-          />
+        />
       </View>
 
-      <Animatable.View delay={600} animation="fadeInUp" style={styles.containerForm}>
-        <Text style={styles.title}>Travel, explore and navigate our galaxy!</Text>
-        <Text style={styles.text}>Let's start</Text>
+      <Animatable.View
+        delay={600}
+        animation="fadeInUp"
+        style={styles.containerForm}
+      >
+        <Text style={styles.title}>
+          Viaje, Explore e Navegue em nossa galáxia!
+        </Text>
+        <Text style={styles.text}>Tudo pronto? Então vamos lá!</Text>
 
-        <TouchableOpacity 
-        style={styles.button}
-        onPress={ () => navigation.navigate('Login')}
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Login")}
         >
-          <Text style={styles.buttonText}>Begin</Text>
+          <Text style={styles.buttonText}>Começar</Text>
         </TouchableOpacity>
       </Animatable.View>
-
     </View>
   );
 }
@@ -45,45 +43,50 @@ export default function Welcome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#334996' 
+    backgroundColor: "#334996",
   },
   containerLogo: {
     flex: 2,
-    backgroundColor: '#334996', 
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: "#334996",
+    justifyContent: "center",
+    alignItems: "center",
   },
   containerForm: {
     flex: 1,
-    backgroundColor: '#f1f1f1',
+    backgroundColor: "#f1f1f1",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    paddingStart: '5%',
-    paddingEnd: '5%'
+    paddingStart: "5%",
+    paddingEnd: "5%",
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginTop: 28,
     marginBottom: 12,
+    textAlign: "center",
   },
   text: {
-    color: '#a1a1a1'
+    color: "#a1a1a1",
+    marginTop: 18,
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
   },
   button: {
-    position: 'absolute',
-    backgroundColor: '#334996', 
+    position: "absolute",
+    backgroundColor: "#334996",
     borderRadius: 50,
     paddingVertical: 8,
-    width: '60%',
-    alignSelf: 'center',
-    bottom: '15%',
-    alignItems: 'center',
-    justifyContent: 'center'
+    width: "60%",
+    alignSelf: "center",
+    bottom: "15%",
+    alignItems: "center",
+    justifyContent: "center",
   },
   buttonText: {
     fontSize: 18,
-    color: '#fff',
-    fontWeight: 'bold',
-  }
+    color: "#fff",
+    fontWeight: "bold",
+  },
 });

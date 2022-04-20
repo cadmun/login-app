@@ -24,10 +24,10 @@ const PageProfile  = () => {
           resizeMode="contain"
           />
         <Animatable.Text delay={500} animation="fadeInLeftBig" style={styles.profileText}>
-          Matheus
+          Astro
         </Animatable.Text>
         <Animatable.Text delay={500} animation="fadeInRightBig" style={styles.profileDescription}>
-          Developer
+          Profile
         </Animatable.Text>
 
       </View>
@@ -50,7 +50,7 @@ const PageProfile  = () => {
         style={styles.button}
         onPress={ () => navigation.navigate('Login')}
         >
-          <Text style={styles.buttonText}>Begin</Text>
+          <Text style={styles.buttonText}>Save</Text>
         </TouchableOpacity>
       </Animatable.View>
 
